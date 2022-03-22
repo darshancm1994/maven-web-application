@@ -13,7 +13,8 @@ stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}bin/mvn sonar:sonar"
 }
 
-stage('UploadArtifactsIntoNexus'){                 
+stage('UploadArtifactsIntoNexus'){ 
+sh "${mavenHome}bin/mvn deploy"                
 }
 
 
